@@ -1,0 +1,25 @@
+{
+  "flights": [
+    {
+      "id": 1,
+      "destination": "New York",
+      "airline": "Airline A",
+      "price": 500,
+      "duration": "5h 30m"
+    },
+    {
+      "id": 2,
+      "destination": "Los Angeles",
+      "airline": "Airline B",
+      "price": 450,
+      "duration": "6h 15m"
+    },
+    {
+      "id": 3,
+      "destination": "Chicago",
+      "airline": "Airline C",
+      "price": 400,
+      "duration": "4h 45m"
+    }
+  ]
+}
