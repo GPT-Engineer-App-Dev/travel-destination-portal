@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/navbar"; // Use the navbar layout
 import Index from "./pages/Index.jsx";
 import FlightSearchResults from "./pages/FlightSearchResults.jsx";
+import BookingConfirmation from "./pages/BookingConfirmation.jsx";
 const queryClient = new QueryClient();
 
 export const navItems = [
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
               <Route path="flight-search-results" element={<FlightSearchResults />} />
+              <Route path="booking-confirmation" element={<BookingConfirmation />} />
               {/* Add more routes here as needed */}
             </Route>
           </Routes>
