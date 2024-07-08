@@ -3,9 +3,16 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/flight-search-results?query=${search}`);
+  };
 
   return (
     <div className="space-y-10">
@@ -13,14 +20,16 @@ const Index = () => {
       <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('/placeholder.svg')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-5xl font-bold mb-4">Explore the World</h1>
-          <Input
-            type="text"
-            placeholder="Search for destinations, hotels, or flights"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-1/2 mb-4"
-          />
-          <Button variant="primary" size="lg">Explore Now</Button>
+          <form onSubmit={handleSearch} className="w-1/2 mb-4">
+            <Input
+              type="text"
+              placeholder="Search for destinations, hotels, or flights"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full mb-4"
+            />
+            <Button type="submit" variant="primary" size="lg">Explore Now</Button>
+          </form>
         </div>
       </section>
 
